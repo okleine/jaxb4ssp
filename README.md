@@ -1,0 +1,1 @@
+This project is related to the Smart Service Proxy and does (propably) not  make any sense without the SSP context. It includes tools for Marshalling and Unmarshalling of (loose) Semantic Entites and Virtual Sensors.
