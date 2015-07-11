@@ -1,0 +1,121 @@
+<xs:schema targetNamespace="http://itm.uzl.de/ssp/jaxb4lse/jaxb"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb
+                               http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd
+                               http://itm.uzl.de/ssp/jaxb4lse/jaxb
+                               http://media.itm.uni-luebeck.de/people/kleine/xsd/lse-schema.xsd"
+           xmlns = "http://itm.uzl.de/ssp/jaxb4lse/jaxb">
+
+    <xs:include schemaLocation="https://media.itm.uni-luebeck.de/people/kleine/xsd/rdf-types.xsd"/>
+    <!--<xs:complexType name="StatementType">-->
+        <!--<xs:annotation>-->
+            <!--<xs:appinfo>-->
+                <!--<jaxb:class name="Statement"/>-->
+            <!--</xs:appinfo>-->
+        <!--</xs:annotation>-->
+        <!--<xs:sequence>-->
+            <!--<xs:element name="s" type="xs:string">-->
+                <!--<xs:annotation>-->
+                    <!--<xs:appinfo>-->
+                        <!--<jaxb:property name="Subject"/>-->
+                    <!--</xs:appinfo>-->
+                <!--</xs:annotation>-->
+            <!--</xs:element>-->
+            <!--<xs:element name="p" type="xs:string">-->
+                <!--<xs:annotation>-->
+                    <!--<xs:appinfo>-->
+                        <!--<jaxb:property name="Predicate"/>-->
+                    <!--</xs:appinfo>-->
+                <!--</xs:annotation>-->
+            <!--</xs:element>-->
+            <!--<xs:element name="o" type="xs:string">-->
+                <!--<xs:annotation>-->
+                    <!--<xs:appinfo>-->
+                        <!--<jaxb:property name="Object"/>-->
+                    <!--</xs:appinfo>-->
+                <!--</xs:annotation>-->
+            <!--</xs:element>-->
+        <!--</xs:sequence>-->
+    <!--</xs:complexType>-->
+
+    <!--<xs:complexType name="StatementListType">-->
+      <!--<xs:annotation>-->
+        <!--<xs:appinfo>-->
+          <!--<jaxb:class name="StatementList"/>-->
+        <!--</xs:appinfo>-->
+      <!--</xs:annotation>-->
+      <!--<xs:sequence>-->
+          <!--<xs:annotation>-->
+              <!--<xs:appinfo>-->
+                  <!--<jaxb:property name="Statements"/>-->
+              <!--</xs:appinfo>-->
+          <!--</xs:annotation>-->
+        <!--<xs:element name="statement" type="StatementType" minOccurs="0" maxOccurs="unbounded"/>-->
+      <!--</xs:sequence>-->
+    <!--</xs:complexType>-->
+
+
+    <xs:complexType name="SimpleSemanticEntityType">
+        <xs:annotation>
+            <xs:appinfo>
+                <jaxb:class name="SemanticEntity"/>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="graph" type="xs:string"/>
+            <xs:element name="statements" type="StatementListType">
+              <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="StatementList"/>
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+  <!--<xs:complexType name="VirtualSensorType">-->
+    <!--<xs:annotation>-->
+      <!--<xs:appinfo>-->
+        <!--<jaxb:class name="VirtualSensor"/>-->
+      <!--</xs:appinfo>-->
+    <!--</xs:annotation>-->
+    <!--<xs:sequence>-->
+      <!--<xs:element name="graph" type="xs:string"/>-->
+        <!--<xs:element name="statements" type="StatementListType">-->
+            <!--<xs:annotation>-->
+                <!--<xs:appinfo>-->
+                    <!--<jaxb:property name="StatementList"/>-->
+                <!--</xs:appinfo>-->
+            <!--</xs:annotation>-->
+        <!--</xs:element>-->
+      <!--<xs:element name="query" type="xs:string"/>-->
+    <!--</xs:sequence>-->
+  <!--</xs:complexType>-->
+
+
+
+  <xs:element name="semantic-entities">
+    <xs:annotation>
+      <xs:appinfo>
+        <jaxb:class name="SemanticEntityList"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="SemanticEntities"/>
+          </xs:appinfo>
+        </xs:annotation>
+        <!--<xs:choice minOccurs="0" maxOccurs="unbounded">-->
+          <xs:element name="semantic-entity" type="SimpleSemanticEntityType" minOccurs="0" maxOccurs="unbounded"/>
+          <!--<xs:element name="virtual-sensor" type="VirtualSensorType"/>-->
+        <!--</xs:choice>-->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,52 @@
+<xs:schema targetNamespace="http://itm.uzl.de/ssp/jaxb4vs/jaxb"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           jaxb:version="2.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns = "http://itm.uzl.de/ssp/jaxb4vs/jaxb"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb
+                               http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd
+                               http://itm.uzl.de/ssp/jaxb4vs/jaxb
+                               http://media.itm.uni-luebeck.de/people/kleine/xsd/vs-schema.xsd">
+
+    <xs:include schemaLocation="https://media.itm.uni-luebeck.de/people/kleine/xsd/rdf-types.xsd"/>
+
+
+  <xs:complexType name="VirtualSensorType">
+    <xs:annotation>
+      <xs:appinfo>
+        <jaxb:class name="VirtualSensor"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="graph" type="xs:string"/>
+        <xs:element name="statements" type="StatementListType">
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="StatementList"/>
+                </xs:appinfo>
+            </xs:annotation>
+        </xs:element>
+      <xs:element name="query" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="virtual-sensors">
+    <xs:annotation>
+      <xs:appinfo>
+        <jaxb:class name="VirtualSensorList"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="VirtualSensors"/>
+          </xs:appinfo>
+        </xs:annotation>
+          <xs:element name="virtual-sensor" type="VirtualSensorType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
