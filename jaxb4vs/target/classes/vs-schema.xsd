@@ -9,32 +9,55 @@
                                http://itm.uzl.de/ssp/jaxb4vs/jaxb
                                http://media.itm.uni-luebeck.de/people/kleine/xsd/vs-schema.xsd">
 
-    <xs:include schemaLocation="https://media.itm.uni-luebeck.de/people/kleine/xsd/rdf-types.xsd"/>
-
-
   <xs:complexType name="VirtualSensorType">
     <xs:annotation>
       <xs:appinfo>
-        <jaxb:class name="VirtualSensor"/>
+        <jaxb:class name="JAXBVirtualSensor"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="graph" type="xs:string"/>
-        <xs:element name="statements" type="StatementListType">
-            <xs:annotation>
-                <xs:appinfo>
-                    <jaxb:property name="StatementList"/>
-                </xs:appinfo>
-            </xs:annotation>
-        </xs:element>
-      <xs:element name="query" type="xs:string"/>
+      <xs:element name="sensor-name" type="xs:string">
+        <xs:annotation>
+            <xs:appinfo>
+                <jaxb:property name="SensorName"/>
+            </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sensor-type" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="SensorType"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="feature-of-interest" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="FeatureOfInterest"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="observed-property" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="ObservedProperty"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sparql-query" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <jaxb:property name="SparqlQuery"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:element name="virtual-sensors">
+  <xs:element name="virtual-sensors-list">
     <xs:annotation>
       <xs:appinfo>
-        <jaxb:class name="VirtualSensorList"/>
+        <jaxb:class name="JAXBVirtualSensorsList"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexType>
@@ -48,5 +71,4 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
 </xs:schema>

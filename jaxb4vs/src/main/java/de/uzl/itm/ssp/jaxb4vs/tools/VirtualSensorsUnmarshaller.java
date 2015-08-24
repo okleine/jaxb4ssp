@@ -1,7 +1,7 @@
 package de.uzl.itm.ssp.jaxb4vs.tools;
 
+import de.uzl.itm.ssp.jaxb4vs.jaxb.JAXBVirtualSensorsList;
 import de.uzl.itm.ssp.jaxb4vs.jaxb.ObjectFactory;
-import de.uzl.itm.ssp.jaxb4vs.jaxb.VirtualSensorList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,12 +29,12 @@ public class VirtualSensorsUnmarshaller {
         }
     }
 
-    public static VirtualSensorList unmarshal(InputStream xmlStream) throws Exception {
+    public static JAXBVirtualSensorsList unmarshal(InputStream xmlStream) throws Exception {
 
         //create xml event reader for input stream
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(xmlStream);
 
-        return unmarshaller.unmarshal(xmlEventReader, VirtualSensorList.class).getValue();
+        return unmarshaller.unmarshal(xmlEventReader, JAXBVirtualSensorsList.class).getValue();
     }
 }

@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2015.07.11 um 01:38:55 PM CEST 
+// Generiert: 2015.08.24 um 11:11:31 PM CEST 
 //
 
 
@@ -18,12 +18,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für virtual-sensors element declaration.
+ * <p>Java-Klasse für virtual-sensors-list element declaration.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;element name="virtual-sensors">
+ * &lt;element name="virtual-sensors-list">
  *   &lt;complexType>
  *     &lt;complexContent>
  *       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -42,11 +42,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "virtualSensors"
 })
-@XmlRootElement(name = "virtual-sensors")
-public class VirtualSensorList {
+@XmlRootElement(name = "virtual-sensors-list")
+public class JAXBVirtualSensorsList {
 
     @XmlElement(name = "virtual-sensor")
-    protected List<VirtualSensor> virtualSensors;
+    protected List<JAXBVirtualSensor> virtualSensors;
 
     /**
      * Gets the value of the virtualSensors property.
@@ -66,13 +66,13 @@ public class VirtualSensorList {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link VirtualSensor }
+     * {@link JAXBVirtualSensor }
      * 
      * 
      */
-    public List<VirtualSensor> getVirtualSensors() {
+    public List<JAXBVirtualSensor> getVirtualSensors() {
         if (virtualSensors == null) {
-            virtualSensors = new ArrayList<VirtualSensor>();
+            virtualSensors = new ArrayList<JAXBVirtualSensor>();
         }
         return this.virtualSensors;
     }

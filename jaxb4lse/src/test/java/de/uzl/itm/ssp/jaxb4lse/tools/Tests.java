@@ -104,8 +104,8 @@ public class Tests {
 
     @Test
     public void testCount(){
-        assertTrue(expected.getSemanticEntities().size() == NUMBER_OF_ENTITIES * 2);
-        assertTrue(actual.getSemanticEntities().size() == NUMBER_OF_ENTITIES * 2);
+        assertTrue(expected.getSemanticEntities().size() == NUMBER_OF_ENTITIES);
+        assertTrue(actual.getSemanticEntities().size() == NUMBER_OF_ENTITIES);
     }
 
     @Test

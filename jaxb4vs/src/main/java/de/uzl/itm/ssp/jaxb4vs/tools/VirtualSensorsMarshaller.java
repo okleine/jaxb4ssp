@@ -1,7 +1,7 @@
 package de.uzl.itm.ssp.jaxb4vs.tools;
 
+import de.uzl.itm.ssp.jaxb4vs.jaxb.JAXBVirtualSensorsList;
 import de.uzl.itm.ssp.jaxb4vs.jaxb.ObjectFactory;
-import de.uzl.itm.ssp.jaxb4vs.jaxb.VirtualSensorList;
 import javanet.staxutils.IndentingXMLEventWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +32,7 @@ public class VirtualSensorsMarshaller {
         }
     }
 
-    public static void marshal(VirtualSensorList virtualSensors, OutputStream outputStream)
+    public static void marshal(JAXBVirtualSensorsList virtualSensors, OutputStream outputStream)
             throws Exception {
 
         XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newInstance();

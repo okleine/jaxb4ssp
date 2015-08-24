@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2015.07.11 um 01:38:55 PM CEST 
+// Generiert: 2015.08.24 um 11:11:31 PM CEST 
 //
 
 
@@ -37,35 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link VirtualSensorList }
+     * Create an instance of {@link JAXBVirtualSensorsList }
      * 
      */
-    public VirtualSensorList createVirtualSensorList() {
-        return new VirtualSensorList();
+    public JAXBVirtualSensorsList createJAXBVirtualSensorsList() {
+        return new JAXBVirtualSensorsList();
     }
 
     /**
-     * Create an instance of {@link VirtualSensor }
+     * Create an instance of {@link JAXBVirtualSensor }
      * 
      */
-    public VirtualSensor createVirtualSensor() {
-        return new VirtualSensor();
-    }
-
-    /**
-     * Create an instance of {@link Statement }
-     * 
-     */
-    public Statement createStatement() {
-        return new Statement();
-    }
-
-    /**
-     * Create an instance of {@link StatementList }
-     * 
-     */
-    public StatementList createStatementList() {
-        return new StatementList();
+    public JAXBVirtualSensor createJAXBVirtualSensor() {
+        return new JAXBVirtualSensor();
     }
 
 }
